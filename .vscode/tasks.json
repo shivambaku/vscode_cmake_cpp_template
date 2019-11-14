@@ -2,10 +2,25 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     "version": "2.0.0",
-    "options": {
-        "cwd": "${workspaceFolder}/build"
-    },
     "tasks": [
+        {
+            "label": "create_build_folder",
+            "type": "shell",
+            "windows": {
+                "command": "if not exist \"./build/\" mkdir build",
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": [
+                            "/d", "/c"
+                        ]
+                    }
+                }
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
         {
             "label": "cmake",
             "type": "shell",
@@ -15,19 +30,28 @@
             "osx": {
                 "command": "cmake -G 'Unix Makefiles' -DCMAKE_BUILD_TYPE=Debug .."
             },
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "dependsOn": [
+                "create_build_folder"
+            ],
             "group": "build"
         },
         {
             "label": "build",
             "type": "shell",
             "command": "cmake --build .",
-            "group": {
-                "kind": "build",
-                "isDefault": true
+            "options": {
+                "cwd": "${workspaceFolder}/build"
             },
             "dependsOn": [
                 "cmake"
-            ]
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }
