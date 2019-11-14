@@ -15,3 +15,6 @@ Default directory is C:\MinGW\bin.
 
 Set the CMake bin directory in the environment variable Path if not done during installation.  
 Default directory is C:\Program Files\CMake\bin.
+
+## Note
+Make sure to restart VSCode after installing and setting environment variables.
