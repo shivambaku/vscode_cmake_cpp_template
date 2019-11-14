@@ -11,5 +11,7 @@
 In MinGW install mingw32-base and mingw32-gcc-g++ package.
 
 Set the MinGW bin directory in the environment variable Path.  
-Default directory is C:\MinGW\bin.  
+Default directory is C:\MinGW\bin.
 
+Set the CMake bin directory in the environment variable Path if not done during installation.  
+Default directory is C:\Program Files\CMake\bin.
