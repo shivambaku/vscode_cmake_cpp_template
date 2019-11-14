@@ -8,10 +8,14 @@
             "name": "Debug Launch",
             "type": "cppdbg",
             "request": "launch",
+            "program": "${workspaceFolder}/build/vscode_cpp_template",
             "windows": {
                 "program": "${workspaceFolder}/build/vscode_cpp_template.exe",
                 "MIMode": "gdb",
                 "miDebuggerPath": "gdb.exe"
+            },
+            "osx": {
+                "MIMode": "lldb"
             },
             "args": [],
             "stopAtEntry": true,
