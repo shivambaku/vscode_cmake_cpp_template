@@ -1,4 +1,4 @@
-# vscode_cpp_template
+# vscode_cmake_cpp_template
  Minimal boilerplate code to run C++ project using Visual Studio Code and CMake on Windows, MacOS, and Linux.
  
 ## Requirements
